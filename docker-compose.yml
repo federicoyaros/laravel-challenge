@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:  
+  app:
+    build:
+      context: ./laravel
+      dockerfile: Dockerfile
+    container_name: laravel-app
+    volumes:
+      - ./laravel:/var/www/html
+    ports:
+      - "8000:80"
+    environment:
+      - APACHE_DOCUMENT_ROOT=/var/www/html/public
+    depends_on:
+      - db
+    networks:
+      - laravel-net
+  
+  db:
+    image: mysql:8.0
+    container_name: laravel-mysql
+    ports:
+      - "3306:3306"
+    restart: always     
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: challenge      
+      MYSQL_PASSWORD: secret
+    volumes:
+      - laravel_mysql_data:/var/lib/mysql
+    networks:
+      - laravel-net
+
+networks:
+  laravel-net:
+  
+volumes:
+  laravel_mysql_data:
