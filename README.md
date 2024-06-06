@@ -16,7 +16,7 @@ This is a Laravel app for training purposes using OAuth2 and integrating with th
 2. Move to the "laravel" folder.
 3. Run `composer install`.
 4. Copy the .env.example into a .env file.
-5. Complete the value for GIPHY_KEY in the .env file.
+5. Complete the value for GIPHY_API_KEY in the .env file.
 6. Change the DB connection settings in the .env.
 7. Run `php artisan migrate` to create the tables of the DB.
 8. Run `php artisan passport:install` to generate the necessary data for the authentication service.
@@ -29,7 +29,7 @@ This is a Laravel app for training purposes using OAuth2 and integrating with th
 1. Clone the repository
 2. Move to the "laravel" folder.
 3. Copy the .env.example into a .env file.
-4. Complete the value for GIPHY_KEY in the .env file.
+4. Complete the value for GIPHY_API_KEY in the .env file.
 5. Move to the root directory where the docker-compose.yml file is located and run `docker-compose up --build -d`.
 6. Run `docker exec -it laravel-app bash` in order to access the Docker container that has the Laravel app.
 7. Run `mysql -u root -p -h db -P 3306` and put the correct password which is contained in the docker-compose.yml. This step is vital to allow the connection between the MySQL and the Laravel containers.
