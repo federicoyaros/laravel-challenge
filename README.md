@@ -32,10 +32,11 @@ This is a Laravel app for training purposes using OAuth2 and integrating with th
 4. Complete the value for GIPHY_API_KEY in the .env file.
 5. Move to the root directory where the docker-compose.yml file is located and run `docker-compose up --build -d`.
 6. Run `docker exec -it laravel-app bash` in order to access the Docker container that has the Laravel app.
-7. Run `mysql -u root -p -h db -P 3306` and put the correct password which is contained in the docker-compose.yml. This step is vital to allow the connection between the MySQL and the Laravel containers.
-8. Inside the Laravel container, run `php artisan migrate` to create the tables of the DB.
-9. Also run  `php artisan passport:install` to generate the necessary data for the authentication service.
-10. The applicatoin should be running in port 8000.
+7. Run `composer install` inside the container.
+8. Run `mysql -u root -p -h db -P 3306` and put the correct password which is contained in the docker-compose.yml. This step is vital to allow the connection between the MySQL and the Laravel containers. Type `exit`.
+9. Inside the Laravel container, run `php artisan migrate` to create the tables of the DB.
+10. Also run  `php artisan passport:install` to generate the necessary data for the authentication service. Type `exit`.
+11. The applicatoin should be running in port 8000.
 
 **Note**: a register method was added in order to create users. It has not been included in the diagrams because it was not part of the requirements. However, the Postman request for this has indeed been included.
 
